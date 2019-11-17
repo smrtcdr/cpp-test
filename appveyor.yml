@@ -4,14 +4,11 @@ install:
 - cmd: set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
 
 build_script:
-- cmd: >-
-    call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86
-    cl /c tiny.c
-    link -out:tiny.exe tiny.obj /ENTRY:WinMainCRTStartup /SUBSYSTEM:CONSOLE
-
-    rem link tiny.obj /FILEALIGN:16 /ALIGN:16 /ENTRY:WinMainCRTStartup /SUBSYSTEM:CONSOLE
-    
-    dir
+- cmd: call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86
+- cmd: cl /c tiny.c
+- cmd: link -out:tiny.exe tiny.obj /ENTRY:WinMainCRTStartup /SUBSYSTEM:CONSOLE
+- cmd: rem link tiny.obj /FILEALIGN:16 /ALIGN:16 /ENTRY:WinMainCRTStartup /SUBSYSTEM:CONSOLE
+- cmd: dir
 
 artifacts:
 - path: '*.exe'
