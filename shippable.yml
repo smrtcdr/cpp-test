@@ -1,0 +1,6 @@
+# Language setting
+language: c
+
+# Cmpiler
+compiler:
+  - gcc
